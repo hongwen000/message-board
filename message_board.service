@@ -3,8 +3,9 @@ Description=message_board.service
 After=network.target
 
 [Service]
+WorkingDirectory=/home/hhh/message-board
 Type=simple
-ExecStart=/home/hhh/message-board/venv/bin /home/hhh/message-board/manager.py runserver
+ExecStart=/home/hhh/message-board/venv/bin/python /home/hhh/message-board/manager.py runserver
 
 [Install]
 WantedBy=multi-user.target
