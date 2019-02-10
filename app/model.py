@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import shelve
+import pprint
 
 DATA_FILE = 'guestbook.dat'
 
@@ -27,6 +28,8 @@ def save_data(name, comment, create_at):
 
     greeting_list.insert(
         0, {'name': name, 'comment': comment, 'create_at': create_at})
+    # pp = pprint.PrettyPrinter(indent=4)
+    # pp.pprint(comment)
         
     database['greeting_list'] = greeting_list
     database.close()

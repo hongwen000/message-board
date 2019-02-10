@@ -15,14 +15,15 @@ var MessageForm = React.createClass({
 			<div className="well">
 			<h4> Leave a Message </h4>
 				<div className="form-group">
-					<label for="exampleinputemail1">your name</label>
-					<input ref="name" className="form-control" placeholder="your name"></input>
+					<label for="exampleinputemail1">name</label>
+					<input ref="name" className="form-control" placeholder=""></input>
 				</div>
 				<div className="form-group">
-					<label for="exampleinputemail1">your comment</label>
-					<textarea ref="comment" className="form-control" placeholder="enter message"></textarea>
+					<label for="exampleinputemail1">content</label>
+					<textarea ref="comment" className="form-control" placeholder=""></textarea>
                 </div>
-                <a onClick={this.onSubmit} className="btn btn-primary">submit</a>
+                <a onTouch={this.onSubmit} className="btn btn-primary">touch</a>
+                <a onClick={this.onSubmit} className="btn btn-primary">click</a>
             </div>
 
 		)
@@ -34,17 +35,19 @@ var MessageList = React.createClass({
 	render: function() {
 		var message = this.props.data.map(function(item){
 			return (
-				<li className="list-group-item">
-				{item.name}  留言于 ({item.create_at})
-				<p> {item.comment} </p>
-				</li>
+                <div class="form-group">
+                  <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{item.name}</h5>
+                    <small>{item.create_at}</small>
+                  </div>
+                  <textarea class="form-control" rows="5" cols="81">{item.comment}</textarea>
+                </div>
 			)
 		});
 		return(
-			<ul className="list-group" id="message-container">
-			<li className="list-group-item">Placeholder message</li>
+			<form id="message-container">
 			{message}
-			</ul>
+			</form>
 		)
 	}
 })
