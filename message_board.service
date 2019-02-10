@@ -1,0 +1,10 @@
+[Unit]
+Description=message_board.service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/hhh/message-board/venv/bin /home/hhh/message-board/manager.py runserver
+
+[Install]
+WantedBy=multi-user.target
