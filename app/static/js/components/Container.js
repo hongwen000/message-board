@@ -22,7 +22,6 @@ var MessageForm = React.createClass({
 					<label for="exampleinputemail1">content</label>
 					<textarea ref="comment" className="form-control" placeholder=""></textarea>
 				</div>
-                <a onTouch={this.onSubmit} className="btn btn-primary">touch</a>
                 <a onClick={this.onSubmit} className="btn btn-primary">click</a>
 				</div>
 
