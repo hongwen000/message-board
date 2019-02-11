@@ -3,7 +3,7 @@
 from app import app
 from flask import render_template, redirect, request, jsonify
 from datetime import datetime
-from app.model import load_data, save_data
+from app.model import load_data, save_data, del_data
 
 
 @app.route("/")
@@ -14,8 +14,8 @@ def index():
 
 @app.route("/get")
 def get_message():
-	data = load_data()
-	return jsonify(status="success", data=data)
+    data = load_data()
+    return jsonify(status="success", data=data)
 
 @app.route("/post", methods=["post"])
 def add_message():
@@ -25,3 +25,11 @@ def add_message():
     save_data(name, comment, create_at)
     #return redirect("/")
     return jsonify(status="success")
+
+@app.route("/delete", methods=["post"])
+def del_message():
+    msg_id = request.form.get('id')
+    if del_data(int(msg_id)):
+        return jsonify(status="success")
+    else:
+        return jsonify(status="failed")
