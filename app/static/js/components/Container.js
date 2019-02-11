@@ -31,8 +31,6 @@ var MessageForm = React.createClass({
 });
 var MessageList = React.createClass({
 	onDelete: function(id, e) {
-		alert(id)
-			var CircularJSON = require('circular-json');
 		$.ajax({
 			type:'post',
 			url:'/delete',
