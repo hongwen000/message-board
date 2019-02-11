@@ -48,6 +48,7 @@ var MessageList = React.createClass({
 	render: function() {
 		const left = {float:'left'}
 		const right = {float:'right'}
+		const width = {width:'100%'}
 		var message = this.props.data.map(function(item){
 			return (
 					<div href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
@@ -63,7 +64,7 @@ var MessageList = React.createClass({
 										{/* <a onClick={this.props.myalert.bind(this)} className="btn btn-primary">click</a> */}
 										<a onClick={this.onDelete.bind(this, item.id)} className="btn btn-primary" style={right}>delete</a>
                   </div>
-                  <textarea class="form-control" rows="5" cols="81">{item.comment}</textarea>
+                  <textarea class="form-control" rows="5" cols="81" style={width}>{item.comment}</textarea>
                 </div>
 						</div>
 					</div>

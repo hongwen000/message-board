@@ -19048,6 +19048,7 @@
 		render: function() {
 			const left = {float:'left'}
 			const right = {float:'right'}
+			const width = {width:'100%'}
 			var message = this.props.data.map(function(item){
 				return (
 						React.createElement("div", {href: "#", class: "list-group-item list-group-item-action flex-column align-items-start active"}, 
@@ -19063,7 +19064,7 @@
 											/* <a onClick={this.props.myalert.bind(this)} className="btn btn-primary">click</a> */
 											React.createElement("a", {onClick: this.onDelete.bind(this, item.id), className: "btn btn-primary", style: right}, "delete")
 	                  ), 
-	                  React.createElement("textarea", {class: "form-control", rows: "5", cols: "81"}, item.comment)
+	                  React.createElement("textarea", {class: "form-control", rows: "5", cols: "81", style: width}, item.comment)
 	                )
 							)
 						)

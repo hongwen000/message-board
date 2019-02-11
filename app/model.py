@@ -31,7 +31,10 @@ def save_data(name, comment, create_at):
         max_key = 0
     else:
         greeting_dict = database['greeting_dict']
-        max_key = max(greeting_dict.keys())
+        if len(greeting_dict) == 0:
+            max_key = 0
+        else:
+            max_key = max(greeting_dict.keys())
     print("Max key is ", max_key)
     greeting_dict[max_key + 1] = {'id': max_key + 1, 'name': name, 'comment': comment, 'create_at': create_at}
     # pp = pprint.PrettyPrinter(indent=4)

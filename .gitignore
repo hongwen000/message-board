@@ -6,3 +6,4 @@ guestbook*
 app/*pyc
 app/static/js/node_modules
 app/static/js/lib/*.map
+app/static/js/lib/bundle.js
